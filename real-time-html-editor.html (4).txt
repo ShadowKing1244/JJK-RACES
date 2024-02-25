@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gacha Spinner - Sorcerer Clans</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-image: url('https://i.imgur.com/yLFC4x9.jpg');
+        background-size: cover;
+        background-position: center;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .container {
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.7);
+        padding: 20px;
+        border-radius: 10px;
+    }
+    h1 {
+        color: #333;
+        margin-bottom: 20px;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 20px;
+        background-color: #ff0;
+        color: #000;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    button:hover {
+        background-color: #ffa500;
+    }
+    #result {
+        margin-top: 20px;
+        font-size: 24px;
+        color: #333;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Click the button to spin and reveal your clan technique!</h1>
+    <button onclick="spinGacha()">Spin</button>
+    <div id="result"></div>
+</div>
+<script>
+    function spinGacha() {
+        const zeninTechniques = ['Ten Shadows Technique', 'Projection Sorcery'];
+        const gojoTechniques = ['Limitless', 'Six Eyes'];
+        const kamoTechniques = ['Blood Manipulation'];
+        const inumakiTechniques = ['Cursed Speech'];
+
+        const clans = ['Zenin Clan', 'Gojo Clan', 'Kamo Clan', 'Inumaki Clan'];
+        const randomClanIndex = Math.floor(Math.random() * clans.length);
+        const selectedClan = clans[randomClanIndex];
+
+        let selectedTechnique;
+        switch (selectedClan) {
+            case 'Zenin Clan':
+                selectedTechnique = zeninTechniques[Math.floor(Math.random() * zeninTechniques.length)];
+                break;
+            case 'Gojo Clan':
+                selectedTechnique = gojoTechniques[Math.floor(Math.random() * gojoTechniques.length)];
+                break;
+            case 'Kamo Clan':
+                selectedTechnique = kamoTechniques[Math.floor(Math.random() * kamoTechniques.length)];
+                break;
+            case 'Inumaki Clan':
+                selectedTechnique = inumakiTechniques[Math.floor(Math.random() * inumakiTechniques.length)];
+                break;
+            default:
+                selectedTechnique = 'Unknown Technique';
+        }
+
+        document.getElementById('result').innerText = `You got: ${selectedClan} (${selectedTechnique})`;
+    }
+</script>
+</body>
+</html>
