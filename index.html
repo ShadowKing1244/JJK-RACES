@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gacha Spinner - Sorcerer Clans</title>
+<title>Gacha Spinner</title>
 <style>
     body {
         margin: 0;
@@ -49,40 +49,16 @@
 </head>
 <body>
 <div class="container">
-    <h1>Click the button to spin and reveal your clan technique!</h1>
+    <h1>Click the button to spin and reveal your race!</h1>
     <button onclick="spinGacha()">Spin</button>
     <div id="result"></div>
 </div>
 <script>
     function spinGacha() {
-        const zeninTechniques = ['Ten Shadows Technique', 'Projection Sorcery'];
-        const gojoTechniques = ['Limitless', 'Six Eyes'];
-        const kamoTechniques = ['Blood Manipulation'];
-        const inumakiTechniques = ['Cursed Speech'];
-
-        const clans = ['Zenin Clan', 'Gojo Clan', 'Kamo Clan', 'Inumaki Clan'];
-        const randomClanIndex = Math.floor(Math.random() * clans.length);
-        const selectedClan = clans[randomClanIndex];
-
-        let selectedTechnique;
-        switch (selectedClan) {
-            case 'Zenin Clan':
-                selectedTechnique = zeninTechniques[Math.floor(Math.random() * zeninTechniques.length)];
-                break;
-            case 'Gojo Clan':
-                selectedTechnique = gojoTechniques[Math.floor(Math.random() * gojoTechniques.length)];
-                break;
-            case 'Kamo Clan':
-                selectedTechnique = kamoTechniques[Math.floor(Math.random() * kamoTechniques.length)];
-                break;
-            case 'Inumaki Clan':
-                selectedTechnique = inumakiTechniques[Math.floor(Math.random() * inumakiTechniques.length)];
-                break;
-            default:
-                selectedTechnique = 'Unknown Technique';
-        }
-
-        document.getElementById('result').innerText = `You got: ${selectedClan} (${selectedTechnique})`;
+        const races = ['Sorcerer', 'Curse', 'Human'];
+        const randomIndex = Math.floor(Math.random() * races.length);
+        const result = races[randomIndex];
+        document.getElementById('result').innerText = `You got: ${result}`;
     }
 </script>
 </body>
